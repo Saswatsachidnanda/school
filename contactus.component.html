@@ -1,0 +1,65 @@
+<h3 style="color: rgb(9, 56, 87); font-weight: bold;">Fill the form and we will contact soon:</h3>
+
+<form #contactform ="ngForm" (ngSubmit)="onSubmit(contactform)" class="border">
+  <p>
+    <label for="firstname">First Name: </label>
+    <input type="text" name="firstname" ngModel>
+  </p>
+  <p>
+    <label for="lastname">Last Name: </label>
+    <input type="text" name="lastname" ngModel>
+  </p>
+  <p>
+    <label for="email">Email: </label>
+    <input type="email" name="email" ngModel>
+  </p>
+  <p>
+    <label for="gender">Gender</label>
+    <input type="radio" value="male" name="gender" ngModel>Male
+    <input type="radio" value="female" name="gender" ngModel>Female
+    <input type="radio" value="other" name="gender" ngModel>Other
+  </p>
+  <p>
+    <label for="profession">Choose your current profession:</label>
+
+    <select name="profession" id="profession" ngModel>
+      <option value="teacher">Teacher</option>
+      <option value="student">Student</option>
+      <option value="left job">Left job</option>
+      <option value="preparing">Preparing</option>
+    </select>
+  </p>
+
+  <p><b>Educational qualification:</b><br>
+    <input type="checkbox" id="highschool" name="highschool"  ngModel>
+    <label for="highschool"> Highschool</label><br>
+    <input type="checkbox" id="undergraduate" name="undergraduate"  ngModel>
+    <label for="undergraduate"> Undergraduate</label><br>
+    <input type="checkbox" id="graduate" name="graduate"  ngModel>
+    <label for="graduate">Graduate</label><br>
+    <input type="checkbox" id="phd" name="phd"  ngModel>
+    <label for="phd">Phd </label>
+  </p>
+
+  <h5>Add your educational certificates here:</h5>
+  <p>
+    <label for="myfile">Select a file:</label>
+    <input type="file" id="myfile" name="myfile" ngModel>
+  </p>
+  <p>
+    <h5>Select Your state</h5>
+    <select name="state" ngModel>
+      <option [ngValue]="c.id" *ngFor="let c of stateList">
+       {{c.state}}
+      </option>
+    </select>
+  <br>
+  <p>
+    <label for="address">Write your address:</label><br>
+<textarea id="address" name="address" rows="4" cols="50" ngModel></textarea>
+</p>
+
+ 
+  <button class="button"> Submit</button>
+</form>
+
